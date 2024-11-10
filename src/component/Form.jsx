@@ -64,34 +64,37 @@ function Form() {
   } = useForm();
 
   const onsubmit = (data) => {
-    const {
-      Name,
-      Date,
-      startTime,
-      endTime,
-      GuestsCount,
-      TablesCount,
-      MenuOptions,
-      Programme,
-    } = data;
-    console.log("Name :" + Name);
-    console.log("Date :" + Date);
-    console.log("startTime :" + startTime);
-    console.log("endTime :" + endTime);
-    console.log("GuestsTime :" + GuestsCount);
-    console.log("TablesCount :" + TablesCount);
-    console.log("MenuOptions :" + MenuOptions);
-    console.log("Proggramme :" + Programme);
+    // const {
+    //   Name,
+    //   Date,
+    //   startTime,
+    //   endTime,
+    //   GuestsCount,
+    //   TablesCount,
+    //   MenuOptions,
+    //   Programme,
+    // } = data;
+    // console.log("Name :" + Name);
+    // console.log("Date :" + Date);
+    // console.log("startTime :" + startTime);
+    // console.log("endTime :" + endTime);
+    // console.log("GuestsTime :" + GuestsCount);
+    // console.log("TablesCount :" + TablesCount);
+    // console.log("MenuOptions :" + MenuOptions);
+    // console.log("Proggramme :" + Programme);
+    console.log(data);
   };
 
+  const errorCount = Object.keys(errors).length;
+
   return (
-    <div className="bg-slate-200 h-screen flex justify-center items-center flex-col">
+    <div className="bg-slate-200 h-screen flex justify-center items-center flex-col container">
       <div>
-        <h1 className="text-3xl pt-4 flex justify-center pb-3">
+        <h1 className={`text-3xl flex justify-center pb-3 ${errorCount>3 ? "!mt-[5.75rem]" : "" }`}>
           Event Details Upload
         </h1>
       </div>
-      <div className="bg-white flex w-[400px] p-3  items-center shadow-lg rounded-lg ">
+      <div className="bg-white flex w-[400px] p-3  items-center shadow-lg rounded-lg">
         <form
           onSubmit={handleSubmit(onsubmit)}
           className="flex flex-col gap-3 w-full"
