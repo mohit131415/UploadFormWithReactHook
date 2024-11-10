@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.shared-styles {
+    width: 100%; /* Ensures all inputs match their container width */
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    padding: 0.225rem;
+    outline: none;
+    font-size: 1rem;
+  }
+  
+  
